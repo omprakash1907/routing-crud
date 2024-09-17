@@ -21,8 +21,10 @@ const Login = () => {
       // Save the token in localStorage or cookies
       if (rememberMe) {
         localStorage.setItem('token', response.data.token);
+        sessionStorage.setItem('role', response.data.role);
       } else {
         sessionStorage.setItem('token', response.data.token);
+        sessionStorage.setItem('role', response.data.role);
       }
 
       alert("Login successful!");

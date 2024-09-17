@@ -4,11 +4,12 @@ import Sidebar from './Admin-panel/Sidebar';
 import Header from './Admin-panel/Header';
 import Footer from './Admin-panel/Footer';
 import Dashboard from './Admin-panel/Dashboard';
-import Users from './Admin-panel/Users';
 import Tasks from './Admin-panel/Tasks';
 import Login from './Admin-panel/Login';
 import Register from './Admin-panel/Register';
 import ProtectedRoute from './Admin-panel/ProtectedRoute'; // Import the ProtectedRoute component
+import TaskForm from './Admin-panel/TaskForm';
+import EditTask from './Admin-panel/EditTask';
 
 // Layout component to wrap the admin panel routes
 const AdminLayout = () => {
@@ -48,8 +49,9 @@ function App() {
           }
         >
           <Route path="dashboard" element={<Dashboard />} />
-          <Route path="users" element={<Users />} />
           <Route path="tasks" element={<Tasks />} />
+          <Route path="tasks/new" element={<TaskForm />} />
+          <Route path="tasks/edit/:id" element={<EditTask />} />
           {/* Catch-all for 404 */}
           <Route path="*" element={<h1 className="container vh-100">404 Page Error...</h1>} />
         </Route>
